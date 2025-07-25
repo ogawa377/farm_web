@@ -14,7 +14,7 @@ header {
     width: 100%;
     /* background-color: #77ab59; */
     /* ★ここを削除またはコメントアウト★ */
-    background-image: url('/images/headerImage.jpeg');
+    background-image: url('images/headerImage.jpeg');
     /* ★これら3行を追加★ */
     background-size: cover;
     /* 画像がヘッダー全体を覆うように拡大・縮小 */
