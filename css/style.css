@@ -12,10 +12,8 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    /* background-color: #77ab59; */
-    /* ★ここを削除またはコメントアウト★ */
-    background-image: url('images/headerImage.jpeg');
-    /* ★これら3行を追加★ */
+    /* ヘッダBGI */
+    background-image: url('images/darm.jpeg');
     background-size: cover;
     /* 画像がヘッダー全体を覆うように拡大・縮小 */
     background-position: center;
