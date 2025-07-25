@@ -1,0 +1,85 @@
+/* .products セクションに余白を追加 */
+.products {
+    padding-top: 100px;
+    /* headerの高さに合わせて調整 */
+}
+
+/* 新鮮な商品紹介文を目立たせるスタイル */
+.products p {
+    font-size: 1.8rem;
+    /* フォントサイズを少し大きく */
+    color: black;
+    /* 濃い緑色 */
+    font-weight: bold;
+    /* 太字にして強調 */
+    text-align: center;
+    /* 中央揃え */
+    margin: 0 auto 2em auto;
+    /* 中央寄せ、下部に余白 */
+    line-height: 1.8;
+    /* 行間を広くして読みやすく */
+}
+
+/* セクションタイトル（"ManaFarmの新鮮な商品"）を目立たせる */
+.products h2 {
+    font-size: 2.5rem;
+    /* ★タイトルを大きく */
+    color: #333;
+    /* ★濃い色で目立たせる */
+    text-align: center;
+    /* ★中央寄せ */
+    margin-bottom: 2em;
+    /* ★下部に余白を追加 */
+}
+
+/* 商品リストのレイアウト */
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* ★レスポンシブなグリッドレイアウト */
+    gap: 2em;
+    /* ★アイテム間の間隔 */
+    justify-content: center;
+    /* ★中央寄せ */
+}
+
+/* 商品アイテム */
+.product-item {
+    background-color: #ffffff;
+    /* ★白背景 */
+    padding: 1.5em;
+    /* ★パディングを追加 */
+    border-radius: 10px;
+    /* ★角を丸く */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* ★軽いシャドウ */
+    text-align: center;
+    /* ★中央寄せ */
+    transition: transform 0.3s ease-in-out;
+    /* ★ホバー時のアニメーション */
+}
+
+.product-item:hover {
+    transform: scale(1.05);
+    /* ★ホバー時に少し拡大 */
+}
+
+/* 商品名のスタイル */
+.product-item h3 {
+    font-size: 1.8rem;
+    /* ★大きなフォント */
+    color: #4a772f;
+    /* ★緑色 */
+    margin-top: 0.5em;
+    /* ★上部に余白 */
+}
+
+/* 商品説明のスタイル */
+.product-item p {
+    font-size: 1rem;
+    /* ★適切なサイズ */
+    color: #666;
+    /* ★薄いグレー */
+    margin-top: 0.5em;
+    /* ★上部に余白 */
+}

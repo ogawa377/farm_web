@@ -12,9 +12,15 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #77ab59;
-    /* ヘッダーの色 */
-    color: white;
+    /* background-color: #77ab59; */
+    /* ★ここを削除またはコメントアウト★ */
+    background-image: url('/images/headerImage.jpeg');
+    /* ★これら3行を追加★ */
+    background-size: cover;
+    /* 画像がヘッダー全体を覆うように拡大・縮小 */
+    background-position: center;
+    /* 画像を中央に配置 */
+    color: black;
     padding: 1em;
     display: flex;
     justify-content: space-between;
@@ -43,70 +49,73 @@ nav a {
 }
 
 /* ハンバーガーメニューアイコン (PCモードでも表示するため、デフォルトで表示) */
-/* ハンバーガーメニューアイコン */
 .menu-toggle {
     display: block;
     font-size: 3em;
     cursor: pointer;
     color: white;
+    /* padding-right: 0.5em; */
+    /* 削除またはコメントアウト */
+    margin-left: auto;
+    /* ★追加: 右寄せにする */
     padding-right: 0.5em;
-    /* または margin-right: 0.5em; */
-    /* ヘッダーのpadding 1emと合わせて、右端からある程度の余白を確保します */
+    /* そのままでも良いが、必要に応じて調整 */
 }
 
+/* ドロワーメニュー */
 .drawer-menu {
     position: fixed;
-    /* ヘッダーの高さに合わせて調整 */
     top: 64px;
-    /* ★★★ ここを修正 (例: ヘッダーの高さに合わせる) ★★★ */
-    /* top: calc(ヘッダーの高さ + paddingやmargin) のように細かく設定しても良い */
-
-    /* 以前の修正も忘れずに適用 */
-    left: -250px;
-    width: 250px;
-    height: 100%;
-    /* height: calc(100% - ヘッダーの高さ) にするとフッターまで隠せる */
+    right: -6em;
+    /* 幅に合わせて調整、初期状態で隠す */
+    width: 8em;
+    /* ★修正: 幅を相対値で指定 (8em) */
+    height: calc(100% - 64px);
     background-color: #77ab59;
     padding: 2em;
-    transition: left 0.3s ease;
+    transition: right 0.3s ease;
     z-index: 99;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
     overflow-y: auto;
 }
 
 /* ドロワーメニューが開いたとき */
 .drawer-menu.open {
-    left: 0;
-    /* メニューが表示される */
+    right: 0;
+    /* ドロワーが開いたときに右側に表示 */
 }
 
 /* ドロワーメニューが閉じたとき */
-/* :not(.open) セレクタを使っているので、この定義は不要ですが、明示的に書いてもOKです */
 .drawer-menu:not(.open) {
-    left: -250px !important;
-    /* 強制的に画面外に隠す (幅に合わせて調整) */
+    right: -15em !important;
+    /* ★修正: 幅に合わせて右側に隠す */
     visibility: hidden !important;
-    /* 完全に非表示にする */
 }
 
+/* ドロワーメニューのリンクリスト */
 .drawer-nav {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
+/* ドロワーメニューの各リストアイテムの間隔を調整 */
 .drawer-nav li {
-    margin: 1em 0;
+    padding-top: 15%;
+    margin: 1.5em 0;
+    /* アイテムの間隔を広げて位置を少し下に調整 */
 }
 
+/* ドロワーメニュー内のリンクスタイル */
 .drawer-nav a {
     color: white;
     text-decoration: none;
     font-weight: bold;
     display: block;
-    /* クリック領域を広げる */
     padding: 0.5em 0;
 }
 
+/* ホバー時の効果 */
 .drawer-nav a:hover {
     background-color: #659b4d;
     border-radius: 4px;
@@ -116,7 +125,7 @@ nav a {
 .hero {
     padding: 10em 1em 6em;
     /* ヘッダーの高さ分を考慮して調整 */
-    background: url('images/assets.jpeg') no-repeat center center;
+    background: url('/images/sky.jpeg');
     /* 画像パスを修正 */
     background-size: cover;
     text-align: center;
