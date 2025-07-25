@@ -1,0 +1,273 @@
+/* ベーススタイル */
+body {
+    font-family: "Helvetica Neue", sans-serif;
+    margin: 0;
+    background-color: #fdfdf6;
+    color: #333;
+}
+
+/* ヘッダー */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #77ab59;
+    /* ヘッダーの色 */
+    color: white;
+    padding: 1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+header .logo h1 {
+    margin: 0;
+}
+
+/* 通常のナビゲーション (PCモードでは非表示にするため、デフォルトで非表示) */
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+    /* デフォルトで非表示 */
+    gap: 2em;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ハンバーガーメニューアイコン (PCモードでも表示するため、デフォルトで表示) */
+/* ハンバーガーメニューアイコン */
+.menu-toggle {
+    display: block;
+    font-size: 3em;
+    cursor: pointer;
+    color: white;
+    padding-right: 0.5em;
+    /* または margin-right: 0.5em; */
+    /* ヘッダーのpadding 1emと合わせて、右端からある程度の余白を確保します */
+}
+
+.drawer-menu {
+    position: fixed;
+    /* ヘッダーの高さに合わせて調整 */
+    top: 64px;
+    /* ★★★ ここを修正 (例: ヘッダーの高さに合わせる) ★★★ */
+    /* top: calc(ヘッダーの高さ + paddingやmargin) のように細かく設定しても良い */
+
+    /* 以前の修正も忘れずに適用 */
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    /* height: calc(100% - ヘッダーの高さ) にするとフッターまで隠せる */
+    background-color: #77ab59;
+    padding: 2em;
+    transition: left 0.3s ease;
+    z-index: 99;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    overflow-y: auto;
+}
+
+/* ドロワーメニューが開いたとき */
+.drawer-menu.open {
+    left: 0;
+    /* メニューが表示される */
+}
+
+/* ドロワーメニューが閉じたとき */
+/* :not(.open) セレクタを使っているので、この定義は不要ですが、明示的に書いてもOKです */
+.drawer-menu:not(.open) {
+    left: -250px !important;
+    /* 強制的に画面外に隠す (幅に合わせて調整) */
+    visibility: hidden !important;
+    /* 完全に非表示にする */
+}
+
+.drawer-nav {
+    list-style: none;
+    padding: 0;
+}
+
+.drawer-nav li {
+    margin: 1em 0;
+}
+
+.drawer-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    /* クリック領域を広げる */
+    padding: 0.5em 0;
+}
+
+.drawer-nav a:hover {
+    background-color: #659b4d;
+    border-radius: 4px;
+}
+
+/* ヒーローセクション */
+.hero {
+    padding: 10em 1em 6em;
+    /* ヘッダーの高さ分を考慮して調整 */
+    background: url('images/assets.jpeg') no-repeat center center;
+    /* 画像パスを修正 */
+    background-size: cover;
+    text-align: center;
+    color: white;
+    height: 400px;
+    /* 高さを指定することで画像が見えやすくなります */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    /* テキストの視認性を向上 */
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5em;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5em;
+}
+
+.cta-button {
+    background-color: #77ab59;
+    color: white;
+    padding: 1em 2em;
+    text-decoration: none;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #659b4d;
+}
+
+/* セクションの共通スタイル */
+section {
+    padding: 4em 1em;
+    text-align: center;
+}
+
+/* 農場についてセクション */
+.about {
+    background-color: #ffffff;
+}
+
+.about h3 {
+    font-size: 2rem;
+    color: #4a772f;
+    margin-bottom: 1em;
+}
+
+.about p {
+    max-width: 800px;
+    margin: 0 auto 2em auto;
+    line-height: 1.8;
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* プロダクトプレビューセクション */
+.products-preview {
+    background-color: #f5f5f5;
+}
+
+.products-preview h3 {
+    font-size: 2rem;
+    color: #4a772f;
+    margin-bottom: 1.5em;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2em;
+    max-width: 1000px;
+    margin: 0 auto 2em auto;
+}
+
+.product-item {
+    background-color: #ffffff;
+    padding: 1.5em;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.product-item img {
+    max-width: 100%;
+    height: 200px;
+    /* 画像の高さを固定 */
+    object-fit: contain;
+    /* 画像が歪まないように調整 */
+    margin-bottom: 1em;
+}
+
+.product-item h4 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 0.5em;
+}
+
+.product-item p {
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* フッター */
+footer {
+    background-color: #4a772f;
+    color: white;
+    text-align: center;
+    padding: 1.5em 1em;
+    font-size: 0.9em;
+}
+
+/* レスポンシブ対応 (最小幅768px以上のデスクトップスタイルをメディアクエリ外に移動するか、別のメディアクエリで制御) */
+/* 今回は、すべてをドロワーメニューで統一するため、@media (max-width: 767px) の内容は削除・変更しました */
+/* すべての画面サイズでハンバーガーアイコンとドロワーメニューを使用する */
+
+
+/* スマートフォン表示での調整 (任意) */
+@media (max-width: 767px) {
+    header .logo h1 {
+        font-size: 1.5em;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .about h3,
+    .products-preview h3 {
+        font-size: 1.8rem;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+        /* 小さい画面では1列表示 */
+    }
+}
