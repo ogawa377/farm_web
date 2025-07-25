@@ -1,0 +1,48 @@
+/* 蜂のスタイル */
+.bee {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-image: url('../images/bee1.png');
+    /* ここに蜂の画像を配置 */
+    background-size: cover;
+    animation: fly 10s infinite linear;
+}
+
+/* 蜂が飛ぶアニメーション */
+@keyframes fly {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    25% {
+        transform: translate(150px, -50px);
+    }
+
+    50% {
+        transform: translate(300px, 0);
+    }
+
+    75% {
+        transform: translate(150px, 50px);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+/* 蜂がランダムに飛ぶように、位置を調整する */
+@keyframes random-fly {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(100vw, 100vh);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
