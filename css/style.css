@@ -1,5 +1,11 @@
+html,
+body {
+    overflow-x: hidden;
+}
+
 /* ベーススタイル */
 body {
+    overflow-x: hidden;
     font-family: "Helvetica Neue", sans-serif;
     margin: 0;
     background-color: #fdfdf6;
