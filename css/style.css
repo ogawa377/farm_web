@@ -19,7 +19,7 @@ header {
     left: 0;
     width: 100%;
     /* ヘッダBGI */
-    background-image: url('../images/headerImage.jpeg');
+    background-image: url('../images/headerImage.jpg');
     background-size: cover;
     /* 画像がヘッダー全体を覆うように拡大・縮小 */
     background-position: center;
