@@ -1,17 +1,5 @@
+// 蜂の制御関数
 document.addEventListener("DOMContentLoaded", function () {
-    const menuToggle = document.getElementById("menu-toggle");
-    const drawerMenu = document.getElementById("drawer-menu");
-
-    menuToggle.addEventListener("click", function () {
-        drawerMenu.classList.toggle("drawer-menu-active");
-    });
-
-    document.addEventListener("click", function (event) {
-        if (!drawerMenu.contains(event.target) && !menuToggle.contains(event.target)) {
-            drawerMenu.classList.remove("drawer-menu-active");
-        }
-    });
-
     const container = document.querySelector(".bee-container");
     if (!container) return;
 
@@ -36,12 +24,13 @@ document.addEventListener("DOMContentLoaded", function () {
         container.appendChild(bee);
         beeCount++;
 
-        // 10秒後に蜂を削除し、カウントを減らす
+        // duration 秒後に蜂を削除
         setTimeout(() => {
             bee.remove();
             beeCount--;
-        }, duration * 1000);  // duration秒後に削除
+        }, duration * 1000);
     }
 
+    // 2秒ごとに蜂を生成
     setInterval(createBee, 2000);
 });

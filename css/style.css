@@ -92,8 +92,7 @@ nav a {
 /* ドロワーメニューが閉じたとき */
 .drawer-menu:not(.open) {
     right: -15em !important;
-    /* ★修正: 幅に合わせて右側に隠す */
-    visibility: hidden !important;
+
 }
 
 /* ドロワーメニューのリンクリスト */
